@@ -2,6 +2,8 @@ package com.example.chango.animacion;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,16 +20,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void rota (View v){
-        Animator animation = AnimatorInflater.loadAnimator
-                (this, R.anim.rotate_around_center_point);
+        /*Animator animation = AnimatorInflater.loadAnimator
+                (this, R.animator.rotate_around_center_point);
         animation.setTarget(animationTarget);
-        animation.start();
+        animation.start();*/
+        ObjectAnimator scaleXAnimator = ObjectAnimator.ofFloat
+                (animationTarget, "rotation", 360f);
+        scaleXAnimator.setRepeatCount(0);
+        scaleXAnimator.setDuration(1000);
+        scaleXAnimator.start();
     }
 
     public void escala (View v){
-        Animator animation = AnimatorInflater.loadAnimator
-                (this, R.anim.escala);
+        /*Animator animation = AnimatorInflater.loadAnimator
+                (this, R.animator.escala);
         animation.setTarget(animationTarget);
-        animation.start();
+        animation.start();*/
+        ObjectAnimator scaleXAnimator = ObjectAnimator.ofFloat
+                (animationTarget, "scaleX", 0.5f);
+        scaleXAnimator.setRepeatMode(ValueAnimator.REVERSE);
+        scaleXAnimator.setRepeatCount(1);
+        scaleXAnimator.setDuration(1000);
+        scaleXAnimator.start();
+
     }
 }

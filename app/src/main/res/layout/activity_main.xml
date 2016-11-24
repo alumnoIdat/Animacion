@@ -18,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:id="@+id/button"
-        android:onClick="rota (MainActivity)" />
+        android:onClick="rota" />
 
     <Button
         android:text="ESCALA!"
@@ -28,7 +28,7 @@
         android:layout_toEndOf="@+id/button"
         android:layout_marginStart="75dp"
         android:id="@+id/button2"
-        android:onClick="escala (MainActivity)" />
+        android:onClick="escala" />
 
     <ImageView
         android:layout_width="wrap_content"
